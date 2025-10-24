@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Plano de Ação — Identificação de Crenças (Paciente B)</title>
+  <style>
+    :root{--bg:#f7f9f7;--card:#ffffff;--accent:#7b8060;--muted:#666}
+    /* ensure paddings/borders are included in width calculations so inputs always fit their parent */
+    *, *::before, *::after { box-sizing: border-box; }
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; background:var(--bg); margin:0;padding:24px;color:#222}
+    .container{max-width:900px;margin:0 auto}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+    h1{margin:0;font-size:20px}
+    small{color:var(--muted)}
+    .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);margin-bottom:14px}
+    label{display:block;margin-top:12px;font-weight:600}
+    /* make all form controls reliably fill their parent */
+    input[type=text], input[type=date], textarea, select{width:100%;padding-top:6px;padding-bottom:6px;border-radius:6px;border:1px solid #ddd;margin-top:6px;font-size:14px;max-width:100%;box-sizing:border-box;}
+    input[type=date]{padding-top:5px;padding-bottom:5px;}
+    textarea{min-height:90px;resize:vertical}
+    .row{display:flex;gap:12px}
+    .col{flex:1}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .chip{padding:8px 10px;border-radius:20px;background:#f0f0f0;cursor:pointer}
+    .chip.selected{background:var(--accent);color:white}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:8px;cursor:pointer}
+    button.secondary{background:#e6e6e6;color:#222}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    table th, table td{border:1px solid #eee;padding:8px;text-align:left}
+    /* ensure inputs/selects inside table cells also fill the cell */
+    table input, table select, table textarea { width:100%; max-width:100%; box-sizing:border-box; }
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:14px;text-align:center;color:var(--muted);font-size:13px}
+    @media(max-width:640px){.row{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Plano de Ação — Identificação de Crenças</h1>
+        <small>Paciente B — elaborado por Viviane Ferreira Gomes Oliveira, CRP 11/22625</small>
+      </div>
+    </header>
+
+    <form id="planForm" class="card" onsubmit="return false;">
+      <div class="row">
+        <div class="col">
+          <label>Nome do paciente</label>
+          <input type="text" id="patientName" placeholder="digite seu nome aqui" />
+        </div>
+        <div class="col">
+          <label>Data de nascimento</label>
+          <input type="date" id="dob"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Profissional (terapeuta)</label>
+          <input type="text" id="therapist" value="Viviane Ferreira Gomes Oliveira — CRP 11/22625" />
+        </div>
+        <div class="col">
+          <label>Data do preenchimento</label>
+          <input type="date" id="date"/>
+        </div>
+      </div>
+
+      <label>1) Situação que desencadeou a emoção</label>
+      <input type="text" id="situation" placeholder="Descreva brevemente a situação..." />
+
+      <label>2) Já se sentiu assim? (marque as que se aplicam)</label>
+      <div class="chips" id="feelings">
+        <div class="chip" data-value="Medo de decepcionar">Medo de decepcionar</div>
+        <div class="chip" data-value="Raiva quando criticada">Raiva quando criticada</div>
+        <div class="chip" data-value="Tristeza por falta de atenção">Tristeza por falta de atenção</div>
+        <div class="chip" data-value="Ansiedade por perder controle">Ansiedade por perder controle</div>
+        <div class="chip" data-value="Vergonha por errar em público">Vergonha por errar em público</div>
+        <div class="chip" data-value="Culpa por dizer não">Culpa por dizer não</div>
+        <div class="chip" data-value="Insegurança por comparações">Insegurança por comparações</div>
+        <div class="chip" data-value="Vontade de desistir">Vontade de desistir</div>
+        <div class="chip" data-value="Irritação por não conseguir controlar">Irritação por não conseguir controlar</div>
+        <div class="chip" data-value="Necessidade de agradar">Necessidade de agradar</div>
+      </div>
+
+      <label>3) Pensamentos automáticos que surgiram (escolha os que mais combinam)</label>
+      <div class="chips" id="thoughts">
+        <div class="chip" data-value="Se eu errar, sou incapaz">Se eu errar, sou incapaz</div>
+        <div class="chip" data-value="Preciso da aprovação dos outros">Preciso da aprovação dos outros</div>
+        <div class="chip" data-value="Ninguém se importa comigo">Ninguém se importa comigo</div>
+        <div class="chip" data-value="Se não controlar, tudo dá errado">Se não controlar, tudo dá errado</div>
+        <div class="chip" data-value="Não sou boa o suficiente">Não sou boa o suficiente</div>
+        <div class="chip" data-value="As pessoas sempre me decepcionam">As pessoas sempre me decepcionam</div>
+        <div class="chip" data-value="Tenho que ser perfeita para ser aceita">Tenho que ser perfeita para ser aceita</div>
+        <div class="chip" data-value="Não consigo lidar com críticas">Não consigo lidar com críticas</div>
+        <div class="chip" data-value="Melhor evitar do que arriscar falhar">Melhor evitar do que arriscar falhar</div>
+        <div class="chip" data-value="Só fico tranquila quando controlo tudo">Só fico tranquila quando controlo tudo</div>
+      </div>
+
+      <label>4) Crenças que parecem estar por trás desses pensamentos (marque)</label>
+      <div class="row">
+        <div class="col card">
+          <label><input type="checkbox" name="belief" value="Sou inadequada" /> Sou inadequada / Não sou capaz</label>
+          <label><input type="checkbox" name="belief" value="As pessoas vão me magoar" /> As pessoas vão me magoar / Não são confiáveis</label>
+          <label><input type="checkbox" name="belief" value="Mundo perigoso" /> O mundo é perigoso / Preciso controlar</label>
+        </div>
+        <div class="col card">
+          <label><input type="checkbox" name="belief" value="Preciso ser perfeita" /> Preciso ser perfeita para ser amada</label>
+          <label><input type="checkbox" name="belief" value="Sempre abandonada" /> Sempre acabam me deixando</label>
+          <label><input type="checkbox" name="belief" value="Se nao controlar da errado" /> Se eu não controlar, tudo dá errado</label>
+        </div>
+      </div>
+
+      <label>5) Emoções sentidas (marque até 3)</label>
+      <div class="chips" id="emotions">
+        <div class="chip" data-value="Ansiedade">Ansiedade</div>
+        <div class="chip" data-value="Raiva">Raiva</div>
+        <div class="chip" data-value="Culpa">Culpa</div>
+        <div class="chip" data-value="Tristeza">Tristeza</div>
+        <div class="chip" data-value="Insegurança">Insegurança</div>
+        <div class="chip" data-value="Medo">Medo</div>
+        <div class="chip" data-value="Vergonha">Vergonha</div>
+        <div class="chip" data-value="Desânimo">Desânimo</div>
+      </div>
+
+      <label>6) Reestruturação breve — evidências a favor e contra a crença</label>
+      <textarea id="evidence" placeholder="Liste evidências que sustentam e que contradizem a crença..."></textarea>
+
+      <label>7) Plano de ação (adicionar ações específicas para trabalhar essa crença)</label>
+      <table id="actionsTable">
+        <thead>
+          <tr><th>Ação</th><th>Quando (data)</th><th>Responsável</th><th>Progresso</th><th></th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="actions">
+        <button type="button" id="addAction">Adicionar ação</button>
+        <button type="button" class="secondary" id="downloadHtml">Baixar (.html)</button>
+        <button type="button" class="secondary" id="downloadJson">Exportar (.json)</button>
+        <button type="button" class="secondary" id="mailtoBtn">Enviar por email</button>
+      </div>
+
+    </form>
+
+    <footer>Arquivo gerado por Viviane Ferreira Gomes Oliveira — CRP 11/22625 | Uso clínico</footer>
+  </div>
+
+  <script>
+    // helper selects
+    function toggleChip(e){ e.classList.toggle('selected'); }
+    function getSelectedChips(container){ return Array.from(document.querySelectorAll('#'+container+' .chip.selected')).map(c=>c.dataset.value); }
+
+    document.querySelectorAll('.chip').forEach(ch=>{
+      ch.addEventListener('click', ()=> toggleChip(ch));
+    });
+
+    // limit emotions to 3
+    document.getElementById('emotions').addEventListener('click', (ev)=>{
+      setTimeout(()=>{
+        const selected = getSelectedChips('emotions');
+        if(selected.length>3){
+          // unselect last clicked
+          ev.target.classList.remove('selected');
+          alert('Marque até 3 emoções.');
+        }
+      },10);
+    });
+
+    // actions table
+    const actionsTbody = document.querySelector('#actionsTable tbody');
+    function addActionRow(action='',when='',who='',progress=''){
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><input type="text" class="act-action" value="${escapeHtml(action)}" placeholder="Ex: Praticar respiração diafragmática 2x ao dia" /></td>
+        <td><input type="date" class="act-date" value="${when}" /></td>
+        <td><input type="text" class="act-who" value="${escapeHtml(who)}" placeholder="Paciente / Terapeuta" /></td>
+        <td>
+          <select class="act-progress">
+            <option ${progress==='Não iniciado'? 'selected':''}>Não iniciado</option>
+            <option ${progress==='Em andamento'? 'selected':''}>Em andamento</option>
+            <option ${progress==='Concluído'? 'selected':''}>Concluído</option>
+          </select>
+        </td>
+        <td><button type="button" onclick="this.closest('tr').remove()">Remover</button></td>
+      `;
+      actionsTbody.appendChild(tr);
+    }
+    document.getElementById('addAction').addEventListener('click', ()=> addActionRow());
+
+    // escape helper
+    function escapeHtml(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+    function collectFormData(){
+      const beliefs = Array.from(document.querySelectorAll('input[name="belief"]:checked')).map(i=>i.value);
+      const actions = Array.from(actionsTbody.querySelectorAll('tr')).map(tr=>({
+        action: tr.querySelector('.act-action').value,
+        when: tr.querySelector('.act-date').value,
+        who: tr.querySelector('.act-who').value,
+        progress: tr.querySelector('.act-progress').value
+      }));
+      return {
+        patientName: document.getElementById('patientName').value,
+        dob: document.getElementById('dob').value,
+        therapist: document.getElementById('therapist').value,
+        date: document.getElementById('date').value,
+        situation: document.getElementById('situation').value,
+        feelings: getSelectedChips('feelings'),
+        thoughts: getSelectedChips('thoughts'),
+        beliefs: beliefs,
+        emotions: getSelectedChips('emotions'),
+        evidence: document.getElementById('evidence').value,
+        actions: actions
+      };
+    }
+
+    // download helpers
+    function download(filename, content, mime){
+      const blob = new Blob([content], {type: mime||'application/octet-stream'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    }
+
+    document.getElementById('downloadJson').addEventListener('click', ()=>{
+      const data = collectFormData();
+      download('Plano_Acao_PacienteB.json', JSON.stringify(data, null, 2), 'application/json');
+    });
+
+    document.getElementById('downloadHtml').addEventListener('click', ()=>{
+      const data = collectFormData();
+      // generate simple filled HTML for record
+      const html = `<!doctype html><html><head><meta charset="utf-8"><title>Plano de Ação - ${escapeHtml(data.patientName)}</title></head><body><pre>${escapeHtml(JSON.stringify(data,null,2))}</pre></body></html>`;
+      download('Plano_Acao_PacienteB.html', html, 'text/html');
+    });
+
+    document.getElementById('mailtoBtn').addEventListener('click', ()=>{
+      const data = collectFormData();
+      const subject = encodeURIComponent('Plano de Ação - '+(data.patientName||'Paciente'));
+      const body = encodeURIComponent(JSON.stringify(data, null, 2));
+      // mailto
+      window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    });
+
+    // initialize with one empty row
+    addActionRow();
+  </script>
+</body>
+</html>
